@@ -1,0 +1,40 @@
+﻿@model  MyETheatre.Repository.Models.DB.WatcherModel
+@{
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<style>
+    .btns {
+        background-color: lightsteelblue;
+        margin-top: 10px;
+    }
+</style>
+
+<section class="w-100 p-4 p-xl-5" style="background-color: rgb(73, 1, 13); border-radius: 0.5rem 0.5rem 0.5rem 0.5rem; --darkreader-inline-bgcolor: #69424a; " data-darkreader-inline-bgcolor="">
+    <div>
+        <h1>Add new watcher</h1>
+        @using (Html.BeginForm("StoreWatcher", "Showing", FormMethod.Post))
+        {
+            <div class="form-group">
+                <label>Name:</label>
+                @Html.TextBoxFor(m => m.WatcherName, new { @class = "form-control" })
+            </div>
+
+            <div class="form-group">
+                <label>Email:</label>
+                @Html.TextBoxFor(m => m.WatcherEmail, new { @class = "form-control" })
+            </div>
+
+            <button type="submit"
+                    class="btn" style="margin-top:5px; background-color:black">
+                Add watcher
+            </button>
+        }
+    </div>
+</section>
+
+@section footer{
+    <footer style="position:fixed; bottom:0;">
+        &copy; MyETheatre 2022 - Theatre plays
+    </footer>
+}

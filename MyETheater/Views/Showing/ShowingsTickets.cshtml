@@ -1,0 +1,53 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<style>
+    .container > div {
+        display: flex;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .delete {
+    }
+
+    .reservation {
+    }
+</style>
+
+<div style="padding-bottom:10px;">
+    <h1> Watchers </h1>
+</div>
+
+<div class="container" style="background-color: rgb(73, 1, 13); border-radius: 0.5rem 0.5rem 0px 0px; --darkreader-inline-bgcolor: #69424a;">
+</div>
+
+<div style="background-color: rgb(73, 1, 13); border-radius: 0px 0px 0.5rem 0.5rem; --darkreader-inline-bgcolor: #69424a; ">
+    <table class="table table-striped table-hover table-responsive table-dark table">
+        <tr>
+
+            <th>Watcher Name</th>
+            <th>Watcher Email</th>
+
+        </tr>
+        @foreach (var item in ViewBag.Watchers)
+        {
+            <tr>
+                <td>@item.WatcherName</td>
+                <td>@item.WatcherEmail</td>
+            </tr>
+
+        }
+
+
+
+    </table>
+</div>
+
+@section footer{
+    <footer style="position:fixed; bottom:0;">
+        &copy; MyETheatre 2022 - Theatre plays
+    </footer>
+}

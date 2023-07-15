@@ -1,0 +1,32 @@
+﻿@model MyETheatre.Repository.Models.DB.ActorModel
+
+@{
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+
+<section class="w-100 p-4 p-xl-5" style="background-color: rgb(73, 1, 13); border-radius: 0.5rem 0.5rem 0.5rem 0.5rem; --darkreader-inline-bgcolor: #69424a; " data-darkreader-inline-bgcolor="">
+    <div>
+        <h1>New Actor</h1>
+        @using (Html.BeginForm("Store", "Actor", FormMethod.Post))
+        {
+            <div class="form-group">
+                <label>Insert the name of the new Actor</label>
+                @Html.TextBoxFor(m => m.ActorName, new { @class = "form-control" })
+            </div>
+
+            <button type="submit" class="btn"  style="margin-top:10px; background-color:black;">
+                Add Actor
+            </button>
+        }
+
+    </div>
+</section>
+
+    @section footer{
+        <footer style="position:fixed; bottom:0;">
+            &copy; MyETheatre 2022 - ActorPage
+        </footer>
+    }
+
+

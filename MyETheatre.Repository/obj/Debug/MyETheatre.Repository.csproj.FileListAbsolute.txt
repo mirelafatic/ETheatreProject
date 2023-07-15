@@ -1,0 +1,6 @@
+C:\Users\Mirela Fatic\Desktop\S6\NPProjekat\MyETheatre.Repository\obj\Debug\MyETheatre.Repository.csproj.AssemblyReference.cache
+C:\Users\Mirela Fatic\Desktop\S6\NPProjekat\MyETheatre.Repository\obj\Debug\MyETheatre.Repository.csproj.CoreCompileInputs.cache
+C:\Users\Mirela Fatic\Desktop\S6\NPProjekat\MyETheatre.Repository\bin\Debug\MyETheatre.Repository.dll
+C:\Users\Mirela Fatic\Desktop\S6\NPProjekat\MyETheatre.Repository\bin\Debug\MyETheatre.Repository.pdb
+C:\Users\Mirela Fatic\Desktop\S6\NPProjekat\MyETheatre.Repository\obj\Debug\MyETheatre.Repository.dll
+C:\Users\Mirela Fatic\Desktop\S6\NPProjekat\MyETheatre.Repository\obj\Debug\MyETheatre.Repository.pdb

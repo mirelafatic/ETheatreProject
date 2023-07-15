@@ -1,0 +1,43 @@
+﻿
+@model  MyETheatre.Repository.Models.DB.ActorModel
+
+@{
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<style>
+    .btns {
+        background-color: lightsteelblue;
+        margin-top: 10px;
+    }
+</style>
+
+<section class="w-100 p-4 p-xl-5" style="background-color: rgb(73, 1, 13); border-radius: 0.5rem 0.5rem 0.5rem 0.5rem; --darkreader-inline-bgcolor: #69424a; " data-darkreader-inline-bgcolor="">
+        <div>
+
+            <h1>Remove Actor</h1>
+            @using (Html.BeginForm("Del", "Actor", FormMethod.Post))
+            {
+                <div class="form-group">
+                    <label>Chose Actor to remove</label>
+                    @Html.DropDownListFor(m => m.ActorID,
+                                  new SelectList(ViewBag.Actors, "ActorID", "ActorName"),
+                                  new { @class = "form-control" }
+                               )
+                </div>
+
+                <button type="submit" class="btn" style="margin-top:5px; background-color:black">
+                    Delete Actor
+                </button>
+            }
+
+        </div>
+</section>
+
+
+        @section footer{
+            <footer style="position:fixed; bottom:0;">
+                &copy; MyETheatre 2022 - Theatre plays
+            </footer>
+        }
+

@@ -1,0 +1,103 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<style>
+    .container > div {
+        display: flex;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .delete {
+    }
+
+    .reservation {
+    }
+</style>
+
+<div style="padding-bottom:10px;">
+    <h1> Plays </h1>
+</div>
+
+<div class="container" style="background-color: rgb(73, 1, 13); border-radius: 0.5rem 0.5rem 0px 0px; --darkreader-inline-bgcolor: #69424a;">
+</div>
+
+<div style="background-color: rgb(73, 1, 13); border-radius: 0px 0px 0.5rem 0.5rem; --darkreader-inline-bgcolor: #69424a; ">
+    <table class="table table-striped table-hover table-responsive table-dark table">
+        <tr>
+
+            <th>PlayName</th>
+            <th>Director</th>
+
+            <th></th>
+
+        </tr>
+        @foreach (var item in ViewBag.Plays)
+        {
+            <tr>
+                <td>@item.PlayName</td>
+                <td>@item.Director</td>
+                <td>
+                    <a class="btn btn-outline-dark ticketReservation" href="/Showing/PlaysShowings/@item.PlayID"> Select </a>
+                </td>
+            </tr>
+
+        }
+
+
+
+    </table>
+</div>
+
+<button class="btn btn-dark" style="background-color:black; margin-top:5px;" onclick="generateReport()">Generate Report</button>
+
+<div>
+
+    <table class="table table-striped table-hover table-responsive table-dark table" id="reports-table" style="visibility:hidden">
+        <thead>
+            <tr>
+                <th>PlayName</th>
+                <th>Director</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in ViewBag.Plays)
+            {
+                <tr>
+                    <td>@item.PlayName</td>
+                    <td>@item.Director</td>
+                </tr>
+
+            }
+        </tbody>
+    </table>
+</div>
+
+<script src="~/Scripts/jquery-3.6.0.js"></script>
+<script src="~/Scripts/jspdf.umd.js"></script>
+<script src="~/Scripts/jspdf.plugin.autotable.js"></script>
+
+<script>
+    function generateReport() {
+        let doc = new jspdf.jsPDF();
+        doc.autoTable({
+            theme: 'striped',
+            headStyles: { fillColor: [73, 1, 13], textColor: [255, 255, 255] },
+            lineColor: Color = 10,
+            font: 'helvetica' | 'times',
+            fontStyle: 'bold',
+            html: '#reports-table'
+        });
+        doc.save('plays.pdf');
+    }
+</script>
+
+<script src="~/Scripts/custom/reservations/reservations.js"></script>
+
+@section footer{
+    <footer style="position:fixed; bottom:0;">
+        &copy; MyETheatre 2022 - Theatre plays
+    </footer>
+}

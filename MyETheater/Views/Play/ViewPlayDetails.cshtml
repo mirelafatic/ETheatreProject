@@ -1,0 +1,36 @@
+﻿@model  MyETheatre.Repository.Models.DB.PlayModel
+@{
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<div style="background-color:black;">
+        <div class="col-md-5 p-lg-5 mx-auto my-5" style="background-color: rgb(73, 1, 13); border-radius: 0.5rem; --darkreader-inline-bgcolor:#310109;" data-darkreader-inline-bgcolor="">
+            <h1 class="display-4 font-weight-normal">Play Details</h1>
+            <p class="lead font-weight-normal">Name of the play:</p>
+            <p class="lead font-weight-normal">@ViewBag.Play.PlayName</p>
+            <p class="lead font-weight-normal">This play is directed by:</p>
+            <p class="lead font-weight-normal">@ViewBag.Play.Director</p>
+            <p class="lead font-weight-normal">Short description of the play:</p>
+            <p class="lead font-weight-normal">@ViewBag.Play.Description</p>
+            <div>
+                <h4>
+                    Actors in this play are:
+                </h4>
+                <div>
+                @foreach (var item in ViewBag.ActorNames)
+                {
+                    <p>@item</p>
+                }
+                </div>
+
+            </div>
+        </div>
+        <div class="product-device box-shadow d-none d-md-block" style="background-color: black; --darkreader-inline-bgcolor:#000000;" data-darkreader-inline-bgcolor=""></div>
+        <div class="product-device product-device-2 box-shadow d-none d-md-block" style="background-color: black; --darkreader-inline-bgcolor:#000000;" data-darkreader-inline-bgcolor=""></div>
+</div>
+
+@section footer{
+    <footer style="position:fixed; bottom:0;">
+        &copy; MyETheatre 2022 - Theatre Add Play Page
+    </footer>
+}

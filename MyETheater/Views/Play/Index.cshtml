@@ -1,0 +1,86 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<style>
+    .container > div {
+        display: flex;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .delete {
+    }
+
+    .reservation {
+    }
+</style>
+
+
+<div style="padding-bottom:10px;">
+    <h1> Plays </h1>
+</div>
+
+
+<div class="container" style="background-color: rgb(73, 1, 13); border-radius: 0.5rem 0.5rem 0px 0px; --darkreader-inline-bgcolor: #69424a; ">
+    <div style="padding-right:10px">
+        <a id="newplay" class="btn" href="/Play/Create" style="background-color:black">
+            Add new play
+        </a>
+    </div>
+    <div style="padding-right:10px">
+        <a id="addshowing" class="btn" style="background-color:black" href="/Showing/Create">Add Showing</a>
+    </div>
+    <div style="padding-right:10px">
+        <a id="map" class="btn" style="background-color:black" href="/Map/Create">Match Actor and Play</a>
+    </div>
+</div>
+
+<div style="background-color: rgb(73, 1, 13); border-radius: 0px 0px 0.5rem 0.5rem; --darkreader-inline-bgcolor: #69424a; ">
+    <table class="table table-striped table-hover table-responsive table-dark table">
+        <!-- iskotistila sam dvije bootstrapove klase, ovo kasnije mogu da promijenim -->
+        <tr>
+
+            <th>PlayName</th>
+            <th>Director</th>
+
+            <th></th>
+            <th></th>
+            <th></th>
+
+            <!--<th>Description</th>-->
+        </tr>
+        @foreach (var item in ViewBag.Plays)
+        {
+            <tr>
+                <!--<td><td>@item.PlayID</td></td>-->
+                <td>@item.PlayName</td>
+                <td>@item.Director</td>
+                <!--<td><td>@item.ShowingID</td></td>-->
+                <!--<td>@item.Description</td>-->
+                <td>
+                    <a class="btn btn-outline-dark" href="/Play/ViewPlayDetails/@item.PlayID"> Details </a>
+                </td>
+                <td>
+                    <a class="btn btn-dark reservation" href="/Play/ViewShowings/@item.PlayID"> Reservations </a>
+                </td>
+                <td>
+                    <button class="btn btn-dark delete" onclick="deletePlay(@item.PlayID)">Remove Play</button>
+                </td>
+
+            </tr>
+
+        }
+
+    </table>
+</div>
+
+<script src="~/Scripts/custom/play/index.js"></script>
+<script src="~/Scripts/custom/play/index2.js"></script>
+@section footer{
+    <footer style="position:fixed; bottom:0;">
+        &copy; MyETheatre 2022 - Theatre plays
+    </footer>
+}
+

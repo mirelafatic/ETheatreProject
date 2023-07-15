@@ -1,0 +1,55 @@
+﻿@model  MyETheatre.Repository.Models.DB.TicketModel
+
+@{
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<section class="w-100 p-4 p-xl-5" style="background-color: rgb(73, 1, 13); border-radius: 0.5rem 0.5rem 0.5rem 0.5rem; --darkreader-inline-bgcolor: #69424a; " data-darkreader-inline-bgcolor="">
+    <div>
+        <h1>New Ticket</h1>
+        @Html.Hidden("showingID", (int)ViewBag.ShowingID)
+        @using (@Html.BeginForm("StoreRes", "Showing", FormMethod.Post))
+        {
+            @Html.Hidden("showingID", (int)ViewBag.ShowingID)
+            @Html.HiddenFor(m => m.ShowingID);
+    <div class="form-group">
+        <label>Chose Watcher:</label>
+
+
+            @Html.DropDownListFor(m => m.WatcherID,
+                new SelectList(ViewBag.Watchers, "WatcherID", "WatcherName"),
+                new { @class = "form-control" }
+            )
+            <label>Add new one if you cant find them:</label>
+            <a class="btn" href="/Showing/CreateWatcher" style="margin-top:5px; background-color:black">
+                Add Watcher
+            </a>
+        <br />
+            <label>Remove all watchers that dont have tickets anymore:</label>
+            <a class="btn" href="/Showing/RefreshWatchers" style="margin-top:5px; background-color:black">
+                Refresh Watchers
+            </a>
+    </div>
+
+            <div>
+                <label>Ticket status</label>
+                @Html.DropDownListFor(m => m.StatusName,
+                    new SelectList(ViewBag.Statuses, "StatusName", "StatusName"),
+                    new { @class = "form-control" }
+                )
+            </div>
+
+            <br />
+            <button type="submit" class="btn" style="margin-top:5px; background-color:black;">
+                Save
+            </button>
+
+        }
+    </div>
+</section>
+
+@section footer{
+    <footer style="position:fixed; bottom:0;">
+        &copy; MyETheatre 2022 - Theatre Add Showing
+    </footer>
+}

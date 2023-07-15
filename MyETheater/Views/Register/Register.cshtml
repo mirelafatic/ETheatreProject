@@ -1,0 +1,50 @@
+﻿@model  MyETheatre.Repository.Models.DB.UserModel
+@{
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<style>
+    .btns {
+        background-color: lightsteelblue;
+        margin-top: 10px;
+    }
+</style>
+
+<section class="w-100 p-4 p-xl-5" style="background-color: rgb(73, 1, 13); border-radius: 0.5rem 0.5rem 0.5rem 0.5rem; --darkreader-inline-bgcolor: #69424a; " data-darkreader-inline-bgcolor="">
+    <div>
+        <h1>Registration</h1>
+        @using (Html.BeginForm("Store", "Register", FormMethod.Post))
+        {
+            <div class="form-group">
+                <label>Email</label>
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+            </div>
+
+            <div class="form-group">
+                <label>Username</label>
+                @Html.TextBoxFor(m => m.Username, new { @class = "form-control" })
+            </div>
+
+            <div class="form-group">
+                <label>Password</label>
+                @Html.TextBoxFor(m => m.Password, new { @class = "form-control" })
+            </div>
+
+            <div class="form-group">
+                <label>Enter secret code: </label>
+                <input type="password" id="RegisterText" name="RegisterText" style="width: 325px; margin: 5px" />
+            </div>
+
+            <button type="submit"
+                    class="btn" style="margin-top:5px; background-color:black">
+                Register
+            </button>
+        }
+    </div>
+</section>
+
+@section footer{
+    <footer style="position:fixed; bottom:0;">
+        &copy; MyETheatre 2022 - Theatre plays
+    </footer>
+}

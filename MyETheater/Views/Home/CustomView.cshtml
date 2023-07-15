@@ -1,0 +1,57 @@
+﻿
+
+@{
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+
+<div>
+    <h1>Contact</h1>
+</div>
+
+<div>
+
+        <!-- Three columns of text below the carousel -->
+    <div class="row" style="padding:30px">
+        <div class="col-lg-4">
+            <img class="rounded-circle" src="~/Pics/11.jpg" alt="Generic placeholder image" width="140" height="140">
+            <h2>Owner of the Theatre</h2>
+            <p>@ViewBag.Infos.TheatreOwner</p>
+            <p>@ViewBag.Infos.OwnerEmail</p>
+            </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+            <img class="rounded-circle" src="~/Pics/me.jpg" alt="Generic placeholder image" width="140" height="140">
+            <h2>Mirela</h2>
+            <p>Owner of the site</p>
+            <p>mirela.fatic000@gmail.com</p>
+            <p>069 832 434</p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+            <img class="rounded-circle" src="~/Pics/33.jpg" alt="Generic placeholder image" width="140" height="140">
+            <h2>For infos about Reservations</h2>
+            <p>@ViewBag.Infos.ForReservation</p>
+            <p>@ViewBag.Infos.ForReservationEmail</p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+            <img class="rounded-circle" src="~/Pics/22.jpg" alt="Generic placeholder image" width="140" height="140">
+            <h2>For infos about Actors and employment</h2>
+            <p>@ViewBag.Infos.ForNewActors</p>
+            <p>@ViewBag.Infos.ForNewActorsEmail</p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+            <img class="rounded-circle" src="~/Pics/55.jpg" alt="Generic placeholder image" width="140" height="140">
+            <h2>For other infos</h2>
+            <p>@ViewBag.Infos.ForOtherInfos</p>
+            <p>@ViewBag.Infos.ForOtherInfosEmail</p>
+        </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+        <!-- START THE FEATURETTES -->
+    </div>
+</div>
+
+@section footer{
+    <footer style="position:fixed; bottom:0;">
+        &copy; MyETheatre 2022 - Contact Page
+    </footer>
+}
+
